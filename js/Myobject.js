@@ -7,7 +7,7 @@ class Myobject{
         this.height = height;
         this.velocityY = 0;
         this.velocityX=0;
-        this.image = loadImage("../images/car1.png");
+       
         this.lifetime = 2000;
     }
     display(){
@@ -16,8 +16,8 @@ class Myobject{
         this.y  +=this.velocityY;
         push();
         translate(this.x,this.y);
-        imageMode(CENTER);
-        image(0,0,20,50);
+        rectMode(CENTER);
+        rect(0,0,20,50);
         pop();
     }
 

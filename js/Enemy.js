@@ -3,14 +3,14 @@ class Enemy {
       this.index = null;
       this.x = 0;
       this.y =0 ;
-    
+    this.velocityX= 5;
       this.bullets = [];
     }
   
    
   
     update(){
-      var playerIndex = "enemies/enemy" + this.index;
+      var playerIndex = "enemies/enemy" + player.index;
       database.ref(playerIndex).set({
        
       x:this.x,
@@ -18,7 +18,7 @@ class Enemy {
       bullets:this.bullets
       });
     }
-    static getPlayerInfo(){
+    static getInfo(){
         var playerInfoRef = database.ref('enemies');
         playerInfoRef.on("value",(data)=>{
           allEnemies = data.val();
